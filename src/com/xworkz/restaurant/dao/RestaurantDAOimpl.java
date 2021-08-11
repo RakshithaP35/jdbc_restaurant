@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.xworkz.restaurant.RestaurantDTO;
-import com.xworkz.restaurant.constant.RestaurantConstant;
+import static com.xworkz.restaurant.constant.RestaurantConstant.*;
 
 public class RestaurantDAOimpl implements RestaurantDAO{
 	
@@ -15,7 +15,7 @@ public class RestaurantDAOimpl implements RestaurantDAO{
 	public int save(RestaurantDTO dto) {
 		System.out.println("saving dto into dao" + dto);
 		Connection tempConnection = null;
-		try(Connection connection = DriverManager.getConnection(RestaurantConstant.URL,RestaurantConstant.USERNAME,RestaurantConstant.SECRET)){
+		try(Connection connection = DriverManager.getConnection(URL,USERNAME,SECRET)){
 			tempConnection= connection;
 			connection.setAutoCommit(false);
 			String query = "insert into restaurant_table values(1,'"+dto.getName()+"','"+dto.getLocation()+"','"+dto.getSpecial()+"',"+dto.isBest()+",'"+dto.getType()+"')";
