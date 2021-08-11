@@ -24,6 +24,17 @@ public class RestaurantDTO implements Serializable{
 		this.isBest = isBest;
 		this.type = type;
 	}
+	
+
+
+	public RestaurantDTO(String name, String location, String special, boolean isBest, RestaurantType type) {
+		super();
+		this.name = name;
+		this.location = location;
+		this.special = special;
+		this.isBest = isBest;
+		this.type = type;
+	}
 
 
 	@Override
